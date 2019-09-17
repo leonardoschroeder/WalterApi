@@ -3001,6 +3001,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Home\\Produto.cshtml",
+      "TargetPath": "Views\\Home\\Produto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Produto\\Index.cshtml",
+      "TargetPath": "Views\\Produto\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

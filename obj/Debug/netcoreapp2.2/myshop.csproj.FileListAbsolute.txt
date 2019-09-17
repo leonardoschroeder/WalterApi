@@ -29,3 +29,5 @@ C:\leoprojeto\projeto\myshop\obj\Debug\netcoreapp2.2\myshop.dll
 C:\leoprojeto\projeto\myshop\obj\Debug\netcoreapp2.2\myshop.pdb
 C:\leoprojeto\projeto\myshop\obj\Debug\netcoreapp2.2\myshop.csproj.CopyComplete
 C:\leoprojeto\projeto\myshop\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index2.g.cshtml.cs
+C:\leoprojeto\projeto\myshop\obj\Debug\netcoreapp2.2\Razor\Views\Home\Produto.g.cshtml.cs
+C:\leoprojeto\projeto\myshop\obj\Debug\netcoreapp2.2\Razor\Views\Produto\Index.g.cshtml.cs
