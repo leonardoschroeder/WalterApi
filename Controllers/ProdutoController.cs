@@ -24,29 +24,21 @@ namespace myshop.Controllers
             listaProduto = produtoServico.BuscarTodos();
             return View(listaProduto);*/
             Console.WriteLine("testando o codigo01");
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Index(Produto produto){
-            Console.WriteLine("Nome");
-            Console.WriteLine(produto.Nome);
-            Console.WriteLine("Preco");
-            Console.WriteLine(produto.Preco);
-            Console.WriteLine("Preco Promocional");
-            Console.WriteLine(produto.PrecoPromocional);
-            Console.WriteLine("Descrição");
-            Console.WriteLine(produto.Descricao);
 
-            return View();
+            var listaProduto = produtoServico.BuscarTodos();
+            return View(listaProduto);
         }
 
         [HttpGet]
         public IActionResult Form(){
+            
+            //var listaProduto = produtoServico.BuscarTodos();
             return View();
         }
-
+        
         [HttpPost]
         public IActionResult Form(Produto produto){
+            Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@Entoru FORM");
             Console.WriteLine("Nome");
             Console.WriteLine(produto.Nome);
             Console.WriteLine("Preco");
@@ -56,7 +48,8 @@ namespace myshop.Controllers
             Console.WriteLine("Descrição");
             Console.WriteLine(produto.Descricao);
             produtoServico.InserirProduto(produto);
-            return View();
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

@@ -1,6 +1,5 @@
-@using myshop.Models;
-@model Produto;
-	
+@model IList<myshop.Models.Produto>;
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -127,121 +126,48 @@ $(document).ready(function() {
 </section>
 <!-- ========================= SECTION INTRO END// ========================= -->
 
+<p>
+    @Html.ActionLink("Adicionar novo Produto", "Form")
+</p>
+
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content bg padding-y">
 <div class="container">
 
 
 
-@using (Html.BeginForm("Index","Produto", FormMethod.Post)){
+
+
+
+@using (Html.BeginForm("Index","Produto")){
 	<div class="row">
-
-		<div class="col-6">
-			<div class="form-group">
-				@Html.LabelFor(m => m.Nome) 
-				@Html.EditorFor(m => m.Nome) 
-			</div>
-		</div>
+		<div class="col-sm-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Descricao</th>
+						<th scope="col">Preço</th>
+						<th scope="col">Preço Promocional</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<th scope="row">@item.Id</th>
+							<td>@item.Nome</td>
+							<td>@item.Descricao</td>
+							<td>@item.Preco</td>
+							<td>@item.PrecoPromocional</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div> <!-- col.// -->
 	</div>
-
-	<div class="row">
-		<div class="col-6">
-			<div class="form-group">
-				@Html.LabelFor(m => m.Preco) 
-				@Html.EditorFor(m => m.Preco) 
-			</div>
-		</div>
-
-		<div class="col-6">
-			<div class="form-group">
-				@Html.LabelFor(m => m.PrecoPromocional) 
-				@Html.EditorFor(m => m.PrecoPromocional) 
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-12">
-			<div class="form-group">
-				@Html.LabelFor(m => m.Descricao) 
-				@Html.EditorFor(m => m.Descricao) 
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-12">
-			<button class="btn btn-primary" type="submit">Cadastrar</button>
-		</div>
-	</div>
-	<br><br>
 }
-
-
-
-<div class="row">
-	<main class="col-sm-12">
-
-
-
-	<article class="card card-product">
-		<div class="card-body">
-		<div class="row">
-			<aside class="col-sm-3">
-				<div class="img-wrap"><img src="images/items/2.jpg"></div>
-			</aside> <!-- col.// -->
-			<article class="col-sm-6">
-					<h4 class="title"> </h4>
-					<div class="rating-wrap  mb-2">
-						<ul class="rating-stars">
-							<li style="width:80%" class="stars-active"> 
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-								<i class="fa fa-star"></i> 
-							</li>
-							<li>
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-								<i class="fa fa-star"></i> 
-							</li>
-						</ul>
-						<div class="label-rating">132 reviews</div>
-						<div class="label-rating">154 orders </div>
-					</div>
-					<p></p>
-					<dl class="dlist-align">
-						<dt>Color</dt>
-						<dd>Black and white</dd>
-					</dl>  <!-- item-property-hor .// -->
-					<dl class="dlist-align">
-						<dt>Material</dt>
-						<dd>Syntetic, wooden</dd>
-					</dl>  <!-- item-property-hor .// -->
-					<dl class="dlist-align">
-						<dt>Delivery</dt>
-						<dd>Russia, USA, and Europe</dd>
-					</dl>  <!-- item-property-hor .// -->
-				
-			</article> <!-- col.// -->
-			<aside class="col-sm-3 border-left">
-				<div class="action-wrap">
-					<div class="price-wrap h4">
-					</div> <!-- info-price-detail // -->
-					<p class="text-success">Free shipping</p>
-					<br>
-					<p>
-						<a href="#" class="btn btn-primary"> Buy now </a>
-						<a href="#" class="btn btn-secondary"> Details  </a>
-					</p>
-					<a href="#"><i class="fa fa-heart"></i> Add to wishlist</a>
-				</div> <!-- action-wrap.// -->
-			</aside> <!-- col.// -->
-		</div>
-		</div>
-	</article>
-	</main> <!-- col.// -->
-</div>
-
 </div> <!-- container .//  -->
 </section>
 
